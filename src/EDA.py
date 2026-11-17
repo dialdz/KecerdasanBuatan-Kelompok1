@@ -79,7 +79,7 @@ df[numerical_features].hist(
     bins=30
 )
 
-plt.suptitle()("Distribusi Fitur Numerik")
+plt.suptitle("Distribusi Fitur Numerik")
 plt.tight_layout()
 plt.show()
 
