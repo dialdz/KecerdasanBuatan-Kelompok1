@@ -1,3 +1,4 @@
+import sys
 from pathlib import Path
 
 import joblib
@@ -5,10 +6,13 @@ import pandas as pd
 import streamlit as st
 import torch
 
+ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
 from src.model import MODEL_PATH, PREPROCESSOR_PATH, PredictiveMaintenanceMLP
 
 
-ROOT_DIR = Path(__file__).resolve().parent.parent
 DATA_PATH = ROOT_DIR / "data" / "raw" / "ai4i2020.csv"
 
 st.set_page_config(
